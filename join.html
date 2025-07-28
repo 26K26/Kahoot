@@ -1,21 +1,4 @@
-document.getElementById('loadBtn').onclick = async () => {
-  const csvFile = document.getElementById('quizSetSelect').value;
-  const csvUrl = `https://raw.githubusercontent.com/26K26/Kahoot/main/${csvFile}`; // ←ユーザー名/リポジトリ名を修正
-  const res = await fetch(csvUrl);
-  const text = await res.text();
-
-  const lines = text.trim().split('\n');
-  const quizData = lines.slice(1).map(line => {
-    const [id, question, option1, option2, option3, option4, answer] = line.split(',');
-    return {
-      id,
-      question,
-      options: [option1, option2, option3, option4],
-      answer: Number(answer)
-    };
-  });
-
-  console.log(quizData); // ←まずは動作確認！
-  // 後でこの配列から1問ずつ出題するロジックへ拡張
-};
-
+<h2>クイズ参加画面</h2>
+<div id="quizArea"></div>
+<script src="js/join.js"></script>
+<link rel="stylesheet" href="style.css">
