@@ -1,6 +1,6 @@
 document.getElementById('loadBtn').onclick = async () => {
   const csvFile = document.getElementById('quizSetSelect').value;
-  const csvUrl = `https://raw.githubusercontent.com/ユーザー名/リポジトリ名/main/${csvFile}`; // ←ユーザー名/リポジトリ名を修正
+  const csvUrl = `https://raw.githubusercontent.com/26K26/Kahoot/main/${csvFile}`; // ←ユーザー名/リポジトリ名を修正
   const res = await fetch(csvUrl);
   const text = await res.text();
 
